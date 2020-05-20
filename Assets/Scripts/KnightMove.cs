@@ -33,10 +33,11 @@ public class KnightMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puedeMover && enSuelo && Input.GetAxis("Jump") > 0)
+        if (Input.GetAxis("Jump") > 0)
         {
             knightAnimator.SetBool("EstaFloor", false);
             rb.velocity = new Vector2(rb.velocity.x, 0f);
+          
             rb.AddForce(new Vector2(0, powerSalto), ForceMode2D.Impulse);
             enSuelo = false;
 
